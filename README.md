@@ -6,8 +6,6 @@ Read more about this on my blog here is the <a href="https://cloudyabhi.blogspot
 
 Deploy to you Salesforce org
 
-<img href="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png" ></img>
-
 <a href="https://githubsfdeploy.herokuapp.com/?owner=abhitripathi&repo=Lightning-Record-Type-Selector">
 <img src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png" >
 </a>
