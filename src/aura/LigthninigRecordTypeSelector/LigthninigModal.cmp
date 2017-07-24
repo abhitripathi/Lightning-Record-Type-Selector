@@ -1,0 +1,45 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" controller="RecordTypeSelectorController" access="global">
+    
+    <ltng:require styles="/resource/SLDS103/assets/styles/salesforce-lightning-design-system-ltng.css" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" access="public"/>
+    <aura:attribute name="recordTypes" type="String[]" access="public"/>
+    
+    <div class="slds">
+        
+        <div >
+            <!-- modal body starts here -->
+            <div tabindex="-1" aria-labelledby="header43" aria-hidden="false" id="newClientSectionId" role="dialog" class="slds-modal slds-fade-in-open" style="display:none;">
+                <div class="slds-backdrop slds-backdrop--open">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close">
+                                <button class="slds-button slds-button--neutral" onclick="{!c.hideModal}">X</button>  
+                                <span class="slds-assistive-text">Close</span>
+                            </button>
+                            <h2 id="header43" class="slds-text-heading--medium">Modal Header</h2>
+                        </div>
+                        <div class="slds-modal__content slds-p-around--medium">
+                            
+                            Select a record type : 
+                            <br/>
+                            <div style="margin-left:30%">
+                                <aura:iteration items="{!v.recordTypes}" var="rt">
+                                    <ol class="slds-list--vertical slds-list--vertical-space">
+                                        <input type="radio" value="{!rt.Name}" name="recordTypeRadio" id="{!rt.Id}" style="margin-right: 5px;" />{!rt.Name}
+                                    </ol>   
+                                </aura:iteration> 
+                            </div>
+                        </div>
+                        
+                        <div class="slds-modal__footer">
+                            <button class="slds-button slds-button--brand" onclick="{!c.hideModal}">Cancel</button>
+                            <button class="slds-button slds-button--brand" onclick="{!c.createRecord}">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="slds-button slds-button--neutral" onclick="{!c.showModal}">Open Modal</button>
+        </div>
+    </div>
+    
+</aura:component>
